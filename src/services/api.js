@@ -10,7 +10,7 @@ export const getCharacter = (name) => {
 };
 
 export const getCharacterById = (id) => {
-  let route = `characters?nameStartsWith=${name}&ts=1&apikey=${PUBLIC_KEY}&hash=${HASH}`;
+  let route = `characters/${id}&ts=1&apikey=${PUBLIC_KEY}&hash=${HASH}`;
 
   return api.get(route);
 };

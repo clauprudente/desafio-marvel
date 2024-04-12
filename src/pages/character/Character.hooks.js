@@ -15,7 +15,7 @@ export const useCharacter = () => {
     const response = await getCharacterById(id);
     console.log(response);
     if (response.data && response.status === 200) {
-      setCharacter(response.data.data.result);
+      setCharacter(response.data.data.results[0]);
       setIsLoading(false);
     }
   };
