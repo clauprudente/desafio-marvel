@@ -18,7 +18,7 @@ export const useHome = () => {
 
   const loadGetCharacter = async (name) => {
     const response = await getCharacter(name);
-
+    console.log(response);
     if (response && response.code === 200) {
       setHeros(response.data);
       setIsLoading(false);
