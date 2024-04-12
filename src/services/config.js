@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const baseUrl = `https://gateway.marvel.com/v1/public/public/`;
+const baseUrl = `https://gateway.marvel.com/v1/public/`;
 
 const api = axios.create({
   baseURL: baseUrl,
