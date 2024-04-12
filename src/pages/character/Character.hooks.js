@@ -13,8 +13,9 @@ export const useCharacter = () => {
 
   const loadGetCharacterById = async () => {
     const response = await getCharacterById(id);
-    if (response && response.code === 200) {
-      setCharacter(response.data);
+    console.log(response);
+    if (response.data && response.status === 200) {
+      setCharacter(response.data.data.result);
       setIsLoading(false);
     }
   };

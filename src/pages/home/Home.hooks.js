@@ -19,8 +19,8 @@ export const useHome = () => {
   const loadGetCharacter = async (name) => {
     const response = await getCharacter(name);
     console.log(response);
-    if (response && response.code === 200) {
-      setHeros(response.data);
+    if (response.data && response.status === 200) {
+      setHeros(response.data.data.results);
       setIsLoading(false);
     } else {
       setError("Vazio =)");
