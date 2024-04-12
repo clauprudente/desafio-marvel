@@ -13,7 +13,7 @@ export const Character = () => {
   return (
     <>
       {isLoading ? (
-        <h1>Loading...</h1>
+        <div className="loading-circle"></div>
       ) : (
         <StyledContent>
           <StyledImage

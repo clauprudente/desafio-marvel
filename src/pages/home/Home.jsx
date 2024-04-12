@@ -4,12 +4,13 @@ import { useHome } from "./Home.hooks";
 import { StyledContainer } from "./Home.styles";
 
 export const Home = () => {
-  const { isLoading, heroName, setHeroNameOnChange, error, heros } = useHome();
+  const { isLoading, heroName, setHeroNameOnChange, onKeyPress, error, heros } =
+    useHome();
 
   return (
     <StyledContainer>
       {isLoading ? (
-        <h1>Loading...</h1>
+        <div className="loading-circle"></div>
       ) : (
         <>
           <TextField
@@ -18,6 +19,7 @@ export const Home = () => {
             type="text"
             value={heroName}
             onChange={({ target }) => setHeroNameOnChange(target.value)}
+            onKeyPress={onKeyPress}
             error={error}
           />
           <Feed data={heros} />

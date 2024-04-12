@@ -6,7 +6,15 @@ import {
   StyledError,
 } from "./TextField.styles";
 
-export const TextField = ({ label, type, name, value, onChange, error }) => {
+export const TextField = ({
+  label,
+  type,
+  name,
+  value,
+  onChange,
+  onKeyPress,
+  error,
+}) => {
   return (
     <StyledWrapper>
       <StyledLabel htmlFor={name}>{label}</StyledLabel>
@@ -16,6 +24,7 @@ export const TextField = ({ label, type, name, value, onChange, error }) => {
         type={type}
         value={value}
         onChange={onChange}
+        onKeyPress={onKeyPress}
       />
       {error && <StyledError>{error}</StyledError>}
     </StyledWrapper>

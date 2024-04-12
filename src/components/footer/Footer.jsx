@@ -4,7 +4,9 @@ import { StyledFooter, StyledText } from "./Footer.styles";
 export const Footer = () => {
   return (
     <StyledFooter>
-      <StyledText>Feito com amor. Alguns direitos reservados.</StyledText>
+      <StyledText>
+        Feito por Cláudia Prudente. Alguns direitos reservados.
+      </StyledText>
     </StyledFooter>
   );
 };

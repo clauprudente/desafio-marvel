@@ -13,12 +13,17 @@ export const useHome = () => {
 
   const setHeroNameOnChange = (name) => {
     setHeroName(name);
-    loadGetCharacter(name);
+  };
+
+  const onKeyPress = (evt) => {
+    if (evt.key === "Enter") {
+      loadGetCharacter(heroName);
+    }
   };
 
   const loadGetCharacter = async (name) => {
     const response = await getCharacter(name);
-    console.log(response);
+
     if (response.data && response.status === 200) {
       setHeros(response.data.data.results);
       setIsLoading(false);
@@ -27,5 +32,5 @@ export const useHome = () => {
     }
   };
 
-  return { isLoading, error, heroName, setHeroNameOnChange, heros };
+  return { isLoading, error, heroName, onKeyPress, setHeroNameOnChange, heros };
 };
