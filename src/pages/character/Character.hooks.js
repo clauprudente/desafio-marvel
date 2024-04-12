@@ -13,8 +13,8 @@ export const useCharacter = () => {
 
   const loadGetCharacterById = async () => {
     const response = await getCharacterById(id);
-    if (response) {
-      setCharacter(response);
+    if (response && response.code === 200) {
+      setCharacter(response.data);
       setIsLoading(false);
     }
   };
